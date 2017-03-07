@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='/javascripts/client.js')
+  body
+    h1= title
+    p Currently the number of viewers is  
+        span#count
+
+    div#myroom
+    div#list-box
+
+    br
+
+    form#room_form(action="javascript:void(0);" method="get" onsubmit="return false;")
+      input#enter(type="text" name="enter")
+      input(class="sbt01" type="submit" value="Create Room or Go into Room")
+
+    form#comment_form(action="javascript:void(0);" autocomplete="off")
+        p Name :  
+          input#name(type="text")
+        p Message or Stamp Number(00~09) :  
+          input#text(type="text")
+          input(class="sbt02" type="submit" value="Send")
+    hr
+
+    image#img(class="box" src='/images/welcome.jpg')
+    p#imgtitle
+    hr
+    dl#list
